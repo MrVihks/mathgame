@@ -6,6 +6,7 @@
   justify-content: center;
 }
 .buttons a{
+  cursor: pointer;
   background: linear-gradient(-45deg,blue, purple);
   background-size: 400% 400%;
   display: block;
@@ -57,4 +58,25 @@
   text-align: center;
   color:purple;
   font-size: clamp(14px, 1vw, 1rem);
+}
+.leveltitle{
+  font-weight: 600;
+  font-size: 20px;
+}
+.level{
+  text-align: center;
+}
+.level_buttons{
+  margin-top:2vh;
+  padding:2vh;
+}
+.level_buttons a{
+  background: linear-gradient(-45deg,blue, purple);
+  background-size: 400% 400%;
+  color:#fff;
+  border-radius: 5px;
+  width: fit-content;
+  margin: 1vh;
+  cursor:pointer;
+  padding: 2vh;
 }

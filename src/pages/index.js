@@ -4,8 +4,10 @@ import styles from '../styles/Home.module.css'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [LevelName, setLevelName] = useState(null)
   const [Part1, setPart1] = useState(0)
   const [Part2, setPart2] = useState(0)
+  const [Level, setLevel] = useState(100)
   const [Win, setWin] = useState(null)
   const [Result, setResult] = useState(null)
 
@@ -21,8 +23,8 @@ export default function Home() {
         }
         function setGame(){
           if(stop == false){
-            setPart1(getRandomNumber(100))
-            setPart2(getRandomNumber(100))
+            setPart1(getRandomNumber(Level))
+            setPart2(getRandomNumber(Level))
             stop = true
           }
         }
@@ -38,6 +40,26 @@ export default function Home() {
             victory.style.color = "red"
           }
         }
+        function levelGame(){
+          const easy = document.getElementById("easy")
+          const medium = document.getElementById("medium")
+          const hard = document.getElementById("hard")
+          const insane = document.getElementById("insane")
+
+          easy.addEventListener('click', ()=>{
+            setLevel(100)
+          })
+          medium.addEventListener('click', ()=>{
+            setLevel(1000)
+          })
+          hard.addEventListener('click', ()=>{
+            setLevel(100000)
+          })
+          insane.addEventListener('click', ()=>{
+            setLevel(100000000) 
+          })
+
+        }
         function startGame(){
           const start = document.getElementById("start") 
           const verify = document.getElementById("verify")
@@ -47,9 +69,11 @@ export default function Home() {
           })
           start.addEventListener('click', function handleClick()  {
               setGame()   
+              
           })
           
         }
+        levelGame()
         startGame()
     
   })
@@ -74,6 +98,15 @@ export default function Home() {
         <div className={styles.buttons}>
           <a id="start">Começar</a>
           <a id="verify">Verificar</a>
+        </div>
+        <div className={styles.level}>
+          <a className={styles.leveltitle}>Dificuldade</a>
+          <div id="dificult_level" className={styles.level_buttons}>
+            <a id="easy">Fácil</a>
+            <a id="medium">Médio</a>
+            <a id="hard">Díicil</a>
+            <a id="insane">Insano</a>
+          </div>
         </div>
       </div>
     </div>

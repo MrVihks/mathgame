@@ -1,0 +1,19 @@
+.nav{
+    background: linear-gradient(-45deg,blue, purple);
+    color:white;
+}
+.nav i{
+    cursor: pointer;
+}
+.navbox{
+    display: inline-flex;
+}
+.navbox a{
+   padding-top: 0.25vh;
+   margin-right: 10px;
+   padding-bottom: 0.25vh;
+}
+.navbox a:hover{
+    background-color: #FFF;
+    color:#000;
+}
